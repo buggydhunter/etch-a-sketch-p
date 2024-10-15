@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "main-container" class="main-container">MAIN-AREA</div>
+
+
+     <template id = "child-template">
+        <div class = "child">Template</div>
+    </template>
+
+
+    <button onclick="addChildren()">Add Children</button>
+
+
+
+
+<script>
+
+    const mainCont = document.getElementById("main-container")
+    mainCont.style.width = '800px'
+    mainCont.style.height = '800px'
+    mainCont.style.border = '5px solid'
+    mainCont.style.borderColor = 'blue'
+    
+    //make div a flex container 
+    mainCont.style.display ='flex'
+    mainCont.style.flexDirection = 'row'
+    mainCont.style.justifyContent = 'center' //center items horizontally
+    mainCont.style.alignItems = 'space-between'
+    mainCont.style.flexWrap = 'wrap' //thanks to this it never overflows
+
+    function addChildren() {
+        const template = document.getElementById('child-template'); 
+        for(let i = 0; i < 3; i++) {
+        const clone = template.content.cloneNode(true); 
+        mainCont.appendChild(clone)
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
